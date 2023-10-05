@@ -93,10 +93,23 @@ tb push --fixtures
 
 Head to your Tinybird workspace and go to any of your new Tinybird Pipes, like `most_expensive_purchases_made_by_gender`, and click "Create API Endpoint" to deploy the API endpoint.
 
+---
+
 ## Contributing
 
-If you find any issues or have suggestions for improvements, please submit an issue or a pull request.
+If you find any issues or have suggestions for improvements, please submit an issue or a [pull request](https://github.com/tinybirdco/google-sheets-tinybird-demo/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 
 ## License
 
-This code is available under the MIT license. See the LICENSE file for more details.
+This code is available under the MIT license. See the [LICENSE](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/LICENSE) file for more details.
+
+### Need help?
+
+&bull; [Community Slack](https://www.tinybird.co/join-our-slack-community) &bull; [Tinybird Docs](https://docs.tinybird.co/) &bull;
+
+## Authors
+
+* [Joe Karlsson](https://github.com/joekarlsson)
+
+Need help?:
+ &bull; [Community Slack](https://www.tinybird.co/join-our-slack-community) &bull; [Tinybird Docs](https://docs.tinybird.co/)  &bull;
