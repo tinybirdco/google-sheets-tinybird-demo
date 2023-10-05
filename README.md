@@ -34,29 +34,29 @@ Go to Auth Tokens on your [Tinybird dashboard](https://ui.tinybird.co/) to get y
 
 Open the Google Sheet where you want to run the script.
 
-## 4. Upload the sample data to your Google Sheet
+### 4. Upload the sample data to your Google Sheet
 
 In Google Sheets, import the [sample data set](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/data.csv) of [customer shopping trends](https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset?select=shopping_trends_updated.csv) by following these steps:
 
 File > Import > Upload > Select a file from your device > Import data > Replace current sheet.
 
-### 4. Access the Script Editor
+### 5. Access the Script Editor
 
 Go to the menu bar at the top and click on Extensions > Apps Script. This will open the script editor in a new tab.
 
-### 5. Write or Paste the Script
+### 6. Write or Paste the Script
 
 In the script editor, write or paste the script from [`code.gs`](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/Code.gs) and replace `YOUR_API_TOKEN` with the token you obtained from Tinybird.
 
-### 6. Save the Script
+### 7. Save the Script
 
 Click the floppy disk icon or press Ctrl + S (or Cmd + S on a Mac) to save your script.
 
-### 7. Run the Script
+### 8. Run the Script
 
 Click the play (triangle) button on the toolbar at the top. You might be prompted to grant permissions the first time you run the script.
 
-### 8. Check for Errors or Logs
+### 9. Check for Errors or Logs
 
 If there are any errors, they will appear in the "Execution log" tab at the bottom. You can also use Logger.log() statements in your code to log messages, viewable in the "Logs" tab (accessible from View > Logs).
 
