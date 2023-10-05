@@ -103,13 +103,10 @@ If you find any issues or have suggestions for improvements, please submit an is
 
 This code is available under the MIT license. See the [LICENSE](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/LICENSE) file for more details.
 
-### Need help?
+## Need help?
 
 &bull; [Community Slack](https://www.tinybird.co/join-our-slack-community) &bull; [Tinybird Docs](https://docs.tinybird.co/) &bull;
 
 ## Authors
 
 * [Joe Karlsson](https://github.com/joekarlsson)
-
-Need help?:
- &bull; [Community Slack](https://www.tinybird.co/join-our-slack-community) &bull; [Tinybird Docs](https://docs.tinybird.co/)  &bull;
