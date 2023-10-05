@@ -91,7 +91,7 @@ tb push --fixtures
 
 ### 3. Deploying the API endpoint
 
-Head to your Tinybird workspace and go to any of your new Tinybird Pipes, like `most_expensive_purchases_made_by_gender`, and click "Create API Endpoint" to deploy the API endpoint.
+Head to your Tinybird workspace and go to any of your new Tinybird Pipes, like [`most_expensive_purchases_made_by_gender`](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/pipes/conversion_rate_of_promo_codes.pipe), and click "Create API Endpoint" to deploy the API endpoint.
 
 ---
 
