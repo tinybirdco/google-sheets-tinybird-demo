@@ -29,7 +29,7 @@ Open the Google Sheet where you want to run the script.
 
 ## 4. Upload the sample data to your Google Sheet
 
-In Google Sheets, import the sample data set of [customer shopping trends](https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset?select=shopping_trends_updated.csv) by following these steps:
+In Google Sheets, import the [sample data set](https://github.com/JoeKarlsson/google_sheets_tinybird_demo/blob/main/data.csv) of [customer shopping trends](https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset?select=shopping_trends_updated.csv) by following these steps:
 
 File > Import > Upload > Select a file from your device > Import data > Replace current sheet.
 
@@ -39,7 +39,7 @@ Go to the menu bar at the top and click on Extensions > Apps Script. This will o
 
 ### 5. Write or Paste the Script
 
-In the script editor, write or paste the script from `code.gs` and replace `YOUR_API_TOKEN` with the token you obtained from Tinybird.
+In the script editor, write or paste the script from [`code.gs`](https://github.com/JoeKarlsson/google_sheets_tinybird_demo/blob/main/Code.gs) and replace `YOUR_API_TOKEN` with the token you obtained from Tinybird.
 
 ### 6. Save the Script
 
