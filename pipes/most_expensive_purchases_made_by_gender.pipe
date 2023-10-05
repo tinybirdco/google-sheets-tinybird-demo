@@ -1,0 +1,12 @@
+TOKEN "most_expensive_purchases_made_by_gender_endpoint_read_1446" READ
+
+NODE endpoint
+SQL >
+
+    %
+    SELECT * FROM google_sheets
+    WHERE Gender = {{String(Gender, "Male", description="Gender of the person making the purchase", required=True)}}
+    ORDER BY PurchaseAmountUSD DESC
+    LIMIT 10
+
+

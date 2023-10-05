@@ -1,0 +1,22 @@
+
+SCHEMA >
+    `Age` Int16 `json:$.Age`,
+    `Category` String `json:$.Category`,
+    `Color` String `json:$.Color`,
+    `DiscountApplied` String `json:$.DiscountApplied`,
+    `FrequencyOfPurchases` String `json:$.FrequencyOfPurchases`,
+    `Gender` String `json:$.Gender`,
+    `ItemPurchased` String `json:$.ItemPurchased`,
+    `Location` String `json:$.Location`,
+    `PaymentMethod` String `json:$.PaymentMethod`,
+    `PreviousPurchases` String `json:$.PreviousPurchases`,
+    `PromoCodeUsed` String `json:$.PromoCodeUsed`,
+    `PurchaseAmountUSD` Int16 `json:$.PurchaseAmountUSD`,
+    `ReviewRating` Float32 `json:$.ReviewRating`,
+    `Season` String `json:$.Season`,
+    `ShippingType` String `json:$.ShippingType`,
+    `Size` String `json:$.Size`,
+    `SubscriptionStatus` String `json:$.SubscriptionStatus`
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "Age, ShippingType, Size, SubscriptionStatus"

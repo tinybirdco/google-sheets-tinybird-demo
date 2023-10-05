@@ -1,7 +1,10 @@
+.tinyb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+.e/
 
 # C extensions
 *.so
