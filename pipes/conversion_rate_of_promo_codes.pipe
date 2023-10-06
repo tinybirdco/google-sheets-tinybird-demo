@@ -1,25 +1,27 @@
+TOKEN "conversion_rate_of_promo_codes_endpoint_read_8386" READ
+
 NODE promo_usage
 SQL >
 
-    SELECT PromoCodeUsed, COUNT(*) as Used_Count
-    FROM google_sheets
-    WHERE PromoCodeUsed = 'Yes'
-    GROUP BY PromoCodeUsed
+    SELECT Promo_Code_Used, COUNT(*) as Used_Count
+    FROM customer_shopping_trends_dataset
+    WHERE Promo_Code_Used = 'Yes'
+    GROUP BY Promo_Code_Used
 
 
 
 NODE total_purchases
 SQL >
 
-    SELECT COUNT(*) as Total_Count FROM google_sheets
+    SELECT COUNT(*) as Total_Count FROM customer_shopping_trends_dataset
 
 
 
-NODE conversion_rate_of_promo_codes_2
+NODE endpoint
 SQL >
 
     SELECT
-        PromoCodeUsed,
+        Promo_Code_Used,
         Used_Count,
         (Used_Count / Total_Count * 100) as Conversion_Rate
     FROM promo_usage, total_purchases

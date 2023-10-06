@@ -1,8 +1,8 @@
 NODE endpoint
 SQL >
 
-    SELECT SUM(PurchaseAmountUSD)
-    FROM google_sheets
-    WHERE SubscriptionStatus = 'Yes'
+    SELECT SUM(Purchase_Amount__USD_)
+    FROM customer_shopping_trends_dataset
+    WHERE Subscription_Status = 'Yes'
 
 
