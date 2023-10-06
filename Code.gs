@@ -1,53 +1,79 @@
 function sendDataToTinybird() {
-  // Get Data from the Sheet
+  // Get the active sheet in your Google Spreadsheet
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
-// Modify or replace these values as needed
-  var eventName = 'google_sheets'; // change this to your specific event name
-  var columnNames = sheet.getRange("A1:Q1").getValues()[0]; // Assuming columns are from A to R
+  // Use your Tinybird authorization token
+  var tinybirdToken = "YOUR_TOKEN_HERE";
 
-  // Define the options common to all requests
+  // Rename the sheet, turning spaces into underscores and making it all lowercase
+  var sheetName = SpreadsheetApp.getActiveSpreadsheet()
+    .getName()
+    .toLowerCase()
+    .replace(/ /g, "_");
+
+  // Get column names. Remove empty ones.
+  var lastColumn = sheet.getLastColumn();
+  var columnNames = sheet
+    .getRange(1, 1, 1, lastColumn)
+    .getValues()[0]
+    .filter(function (name) {
+      return name;
+    });
+
+  // Set up the header for our web request
   var headers = {
-	Authorization: 'Bearer YOUR_TINYBIRD_AUTH_TOKEN'
+    Authorization: "Bearer " + tinybirdToken,
   };
 
-  // Dynamically get the range of data in your spreadsheet
+  // Get all the data from the sheet
   var lastRow = sheet.getLastRow();
-  var lastColumn = sheet.getLastColumn();
   var range = sheet.getRange(2, 1, lastRow - 1, lastColumn);
   var rows = range.getValues();
 
-  rows.forEach(function (row) {
-	var payload = {};
+  // We'll send data in chunks of 500 rows at a time
+  var batchSize = 500;
+  for (var start = 0; start < rows.length; start += batchSize) {
+    // Find the last row in this batch
+    var end = Math.min(start + batchSize, rows.length);
 
-	// Dynamically Create the payload
-	for (var i = 0; i < columnNames.length; i++) {
-  		payload[columnNames[i]] = row[i];
-	}
+    // Get the rows for this batch
+    var batchRows = rows.slice(start, end);
 
-	// Define the options for this request
-	var options = {
-  	method: "post",
-  	contentType: "application/json",
-  	headers: headers,
-  	payload: JSON.stringify(payload),
-  	muteHttpExceptions: true, // To get full response on error
-	};
+    // Convert the batch of rows to the needed JSON format
+    var payload = batchRows
+      .map(function (row) {
+        var obj = {};
+        for (var i = 0; i < columnNames.length; i++) {
+          obj[columnNames[i]] = row[i];
+        }
+        return JSON.stringify(obj);
+      })
+      .join("\n");
 
-	// Make the request
-	var response = UrlFetchApp.fetch(
-  	"https://api.tinybird.co/v0/events?name=" + eventName,
-  	options
-	);
+    // Set up the web request
+    var options = {
+      method: "post",
+      contentType: "application/json",
+      headers: headers,
+      payload: payload,
+      muteHttpExceptions: true, // To get full response even if there's an error
+    };
 
-	// Log the response
-	Logger.log(response.getContentText());
-  });
+    // Send the data
+    var response = UrlFetchApp.fetch(
+      "https://api.tinybird.co/v0/events?name=" + sheetName,
+      options
+    );
+
+    // Show the result of our request
+    Logger.log(response.getContentText());
+  }
 }
 
+// Creates a new menu in Google Sheets when you open the spreadsheet
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Tinybird')
-  	.addItem('Send Data to Tinybird', 'sendDataToTinybird')
-  	.addToUi();
+  ui.createMenu("Tinybird")
+    .addItem("Send Data to Tinybird", "sendDataToTinybird")
+    .addToUi();
 }
