@@ -36,7 +36,7 @@ Open the Google Sheet where you want to run the script.
 
 ### 4. Upload the sample data to your Google Sheet
 
-In Google Sheets, import the [sample data set](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/data.csv) of [customer shopping trends](https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset?select=shopping_trends_updated.csv) by following these steps:
+In Google Sheets, import the [sample data set](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/customer_shopping_trends_dataset.csv) of [customer shopping trends](https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset?select=shopping_trends_updated.csv) by following these steps:
 
 File > Import > Upload > Select a file from your device > Import data > Replace current sheet.
 
@@ -46,7 +46,7 @@ Go to the menu bar at the top and click on Extensions > Apps Script. This will o
 
 ### 6. Write or Paste the Script
 
-In the script editor, write or paste the script from [`code.gs`](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/Code.gs) and replace `YOUR_API_TOKEN` with the token you obtained from Tinybird.
+In the script editor, write or paste the script from [`code.gs`](https://github.com/tinybirdco/google-sheets-tinybird-demo/blob/main/Code.gs) and replace `YOUR_TOKEN_HERE` with the token you obtained from Tinybird. You may also need to update your Events API host if operating on a non-EU cluster (e.g. `https://api.us-east.tinybird.co/v0/events?name=`).
 
 ### 7. Save the Script
 
