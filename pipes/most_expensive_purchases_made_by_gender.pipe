@@ -4,9 +4,9 @@ NODE endpoint
 SQL >
 
     %
-    SELECT * FROM customer_shopping_trends_dataset
-    WHERE Gender = {{String(Gender, "Male", description="Gender of the person making the purchase", required=True)}}
-    ORDER BY Purchase_Amount__USD_ DESC
-    LIMIT 10
+        SELECT * FROM customer_shopping_trends_dataset
+        WHERE Gender = {{String(Gender, "Male", description="Gender of the person making the purchase", required=True)}}
+        ORDER BY Purchase_Amount__USD_ DESC
+        LIMIT 10
 
 

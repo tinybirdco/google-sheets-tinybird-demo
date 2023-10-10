@@ -1,0 +1,18 @@
+TOKEN "most_popular_colors_endpoint_read_7066" READ
+
+NODE endpoint
+SQL >
+
+    %
+    SELECT
+      Color,
+      count() AS c
+    FROM customer_shopping_trends_dataset
+    WHERE Category = {{String(category, "Clothing", "The category by which to filter")}}
+    GROUP BY Color
+    ORDER BY c DESC
+    {% if defined(limit) %}
+      LIMIT BY {{UInt16(limit, 10, "The number of results to return")}}
+    {% end %}
+
+

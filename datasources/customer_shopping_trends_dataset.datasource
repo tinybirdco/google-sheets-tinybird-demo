@@ -11,7 +11,7 @@ SCHEMA >
     `Frequency_of_Purchases` String `json:$.['Frequency of Purchases']`,
     `Item_Purchased` String `json:$.['Item Purchased']`,
     `Payment_Method` String `json:$.['Payment Method']`,
-    `Previous_Purchases` String `json:$.['Previous Purchases']`,
+    `Previous_Purchases` Int16 `json:$.['Previous Purchases']`,
     `Promo_Code_Used` String `json:$.['Promo Code Used']`,
     `Purchase_Amount__USD_` Int16 `json:$.['Purchase Amount (USD)']`,
     `Review_Rating` Float32 `json:$.['Review Rating']`,

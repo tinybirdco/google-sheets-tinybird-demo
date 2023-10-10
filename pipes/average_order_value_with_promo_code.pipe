@@ -1,0 +1,31 @@
+TOKEN "average_order_value_with_promo_code_endpoint_read_9791" READ
+
+NODE with_promo
+SQL >
+
+    SELECT
+      avg(Purchase_Amount__USD_)::Float32 AS avg_order_value
+    FROM customer_shopping_trends_dataset
+    WHERE Promo_Code_Used = 'Yes'
+
+
+
+NODE overall
+SQL >
+
+    SELECT
+      avg(Purchase_Amount__USD_) AS avg_order_value
+    FROM customer_shopping_trends_dataset
+
+
+
+NODE endpoint
+SQL >
+
+    SELECT
+      overall.avg_order_value::Float32 AS overall_avg_order_value,
+      with_promo.avg_order_value::Float32 AS with_promo_avg_order_value,
+      (overall.avg_order_value - with_promo.avg_order_value)::Float32 AS difference
+    FROM overall, with_promo
+
+

@@ -1,0 +1,15 @@
+TOKEN "sales_over_amount_by_category_endpoint_read_1044" READ
+
+NODE endpoint
+SQL >
+
+    %
+    SELECT
+      Category,
+      count() AS c
+    FROM customer_shopping_trends_dataset
+    WHERE Purchase_Amount__USD_ > {{UInt32(purchase_amount, 25, "Return sales over this amount")}}
+    GROUP BY Category
+    ORDER BY c DESC
+
+
